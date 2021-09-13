@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 15:06:09 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/06 15:11:48 by llopes-n         ###   ########.fr       */
+/*   Created: 2021/09/10 22:04:43 by llopes-n          #+#    #+#             */
+/*   Updated: 2021/09/11 01:01:36 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int c)
+void	ft_putendl_fd(char *str, int fd)
 {
-	char	*backup;
-
-	backup = 0;
-	while (*string)
+	while (*str)
 	{
-		if (*string == (unsigned char)c)
-			backup = (char *)string;
-		string++;
+		write(fd, &*str, 1);
+		str++;
 	}
-	if (*string == (unsigned char)c)
-		backup = (char *)string;
-	return (backup);
+	write(fd, "\n", 1);
 }

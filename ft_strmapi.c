@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 15:06:09 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/06 15:11:48 by llopes-n         ###   ########.fr       */
+/*   Created: 2021/09/09 20:04:05 by llopes-n          #+#    #+#             */
+/*   Updated: 2021/09/09 20:44:20 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int c)
+char	*ft_strmapi(char const *str, char (*ft)(unsigned int, char))
 {
-	char	*backup;
+	char	*newstr;
+	int		index;
 
-	backup = 0;
-	while (*string)
+	if (!str || !ft)
+		return (0);
+	newstr = (char *)ft_calloc((ft_strlen(str) + 1), sizeof(char));
+	if (!newstr)
+		return (NULL);
+	index = 0;
+	while (str[index])
 	{
-		if (*string == (unsigned char)c)
-			backup = (char *)string;
-		string++;
+		newstr[index] = ft(index, str[index]);
+		index++;
 	}
-	if (*string == (unsigned char)c)
-		backup = (char *)string;
-	return (backup);
+	return (newstr);
 }

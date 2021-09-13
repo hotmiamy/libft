@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:12:28 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/05 17:11:47 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/11 03:26:13 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
@@ -40,5 +43,16 @@ char	*ft_strnstr(const char *bigStr, const char *littleStr, size_t len);
 int		ft_atoi(const char *numstr);
 void	*ft_calloc(size_t number, size_t size);
 char	*ft_strdup(const char *str);
+char	*ft_substr(char const *str, unsigned int start, size_t len);
+char	*ft_strjoin(const char *str1, const char *str2);
+char	*ft_strtrim(char const *str, char const *set);
+char	**ft_split(char const *str, char chr);
+char	*ft_itoa(int nbr);
+char	*ft_strmapi(char const *str, char (*ft)(unsigned int, char));
+void	ft_striteri(char *str, void (*ft)(unsigned int, char*));
+void	ft_putchar_fd(char chr, int fd);
+void	ft_putendl_fd(char *str, int fd);
+void	ft_putnbr_fd(int nbr, int fd);
+void	ft_putstr_fd(char *str, int fd);
 
 #endif

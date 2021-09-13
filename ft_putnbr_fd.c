@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 15:06:09 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/06 15:11:48 by llopes-n         ###   ########.fr       */
+/*   Created: 2021/09/10 22:07:04 by llopes-n          #+#    #+#             */
+/*   Updated: 2021/09/13 20:45:02 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int c)
+void	ft_putnbr_fd(int nbr, int fd)
 {
-	char	*backup;
+	static int	boole;
 
-	backup = 0;
-	while (*string)
+	if (nbr < 0 && boole != 1)
 	{
-		if (*string == (unsigned char)c)
-			backup = (char *)string;
-		string++;
+		write(fd, "-", 1);
+		boole = 1;
 	}
-	if (*string == (unsigned char)c)
-		backup = (char *)string;
-	return (backup);
+	if (nbr > 9 || (nbr < -9 && nbr < 0))
+	{
+		ft_putnbr_fd((nbr / 10), fd);
+		ft_putnbr_fd((nbr % 10), fd);
+	}
+	else if (nbr > -10 && nbr < 0)
+	{
+		ft_putchar_fd(('0' - nbr), fd);
+	}
+	else if (nbr < 10 && nbr >= 0)
+	{
+		ft_putchar_fd((nbr + '0'), fd);
+	}
 }

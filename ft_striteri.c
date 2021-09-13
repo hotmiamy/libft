@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 15:06:09 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/06 15:11:48 by llopes-n         ###   ########.fr       */
+/*   Created: 2021/09/09 21:02:09 by llopes-n          #+#    #+#             */
+/*   Updated: 2021/09/09 21:25:10 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int c)
+void	ft_striteri(char *str, void (*ft)(unsigned int, char*))
 {
-	char	*backup;
-
-	backup = 0;
-	while (*string)
+	size_t index;
+	if (!str || !*str)
+		return ;
+	index = 0;
+	while (str[index])
 	{
-		if (*string == (unsigned char)c)
-			backup = (char *)string;
-		string++;
+		ft(index, &str[index]);
+		index++;
 	}
-	if (*string == (unsigned char)c)
-		backup = (char *)string;
-	return (backup);
 }

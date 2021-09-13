@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 15:06:09 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/06 15:11:48 by llopes-n         ###   ########.fr       */
+/*   Created: 2021/09/05 20:23:55 by llopes-n          #+#    #+#             */
+/*   Updated: 2021/09/09 02:12:12 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int c)
+char	*ft_strjoin(const char *str1, const char *str2)
 {
-	char	*backup;
+	char	*strConca;
+	int		str1len;
+	int		strConcalen;
 
-	backup = 0;
-	while (*string)
-	{
-		if (*string == (unsigned char)c)
-			backup = (char *)string;
-		string++;
-	}
-	if (*string == (unsigned char)c)
-		backup = (char *)string;
-	return (backup);
+	if (!str1)
+		return (0);
+	str1len = ft_strlen(str1);
+	strConcalen = str1len + ft_strlen(str2) + 1;
+	strConca = (char *)malloc(strConcalen * sizeof(char));
+	if (!strConca)
+		return (0);
+	ft_strlcpy(strConca, str1, str1len + 1);
+	ft_strlcat(strConca, str2, strConcalen);
+	return (strConca);
 }

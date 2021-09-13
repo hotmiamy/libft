@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 12:28:07 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/08/31 15:05:34 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/09 02:18:07 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,13 @@
 
 char	*ft_strchr(const char *string, int c)
 {
-	int	strlen;
-
-	strlen = ft_strlen((char *)string) + 1;
-	if (*string != '\0')
+	while (*string)
 	{
-		while (strlen--)
-		{
-			if (*string == c)
-				return ((char *)string);
-			string++;
-		}
+		if (*string == (unsigned char)c)
+			return ((char *)string);
+		string++;
 	}
-	else
+	if (*string == (unsigned char)c)
 		return ((char *)string);
 	return (0);
 }

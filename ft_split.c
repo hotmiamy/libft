@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:07:53 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/08 20:03:50 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/14 04:16:51 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,56 @@
 
 static int	ft_numlettles(char *str, char delimiter)
 {
-	int	numLettles;
+	int	num_lettles;
 
-	numLettles = 0;
-	while (str[numLettles] != delimiter && str[numLettles])
-		numLettles++;
-	return (numLettles);
+	num_lettles = 0;
+	while (str[num_lettles] != delimiter && str[num_lettles])
+		num_lettles++;
+	return (num_lettles);
 }
 
 static int	ft_numWorlds(char *str, char delimiter)
 {
 	int	index;
-	int	numberWorlds;
+	int	number_worlds;
 
 	index = 0;
-	numberWorlds = 0;
+	number_worlds = 0;
 	while (str[index])
 	{
 		if (str[index] != delimiter)
 		{
-			numberWorlds++;
+			number_worlds++;
 			while (str[index] != delimiter && str[index])
 				index++;
 		}
 		else
 			index++;
 	}
-	return (numberWorlds);
+	return (number_worlds);
 }
 
 char	**ft_split(char const *str, char chr)
 {
 	char	**matrix;
-	int		numWorlds;
-	int		numLettlers;
+	int		num_worlds;
+	int		num_lettlers;
 	int		array;
 
 	if (!str)
 		return (0);
 	array = 0;
-	numWorlds = ft_numWorlds((char *)str, chr);
-	matrix = (char **)malloc((numWorlds + 1) * sizeof(char *));
+	num_worlds = ft_numWorlds((char *)str, chr);
+	matrix = (char **)malloc((num_worlds + 1) * sizeof(char *));
 	if (!matrix)
 		return (NULL);
-	while (array < numWorlds)
+	while (array < num_worlds)
 	{
 		while (*str == chr && *str)
 			str++;
-		numLettlers = ft_numlettles((char *)str, chr);
-		matrix[array] = ft_substr(str, 0, numLettlers);
-		str += numLettlers + 1;
+		num_lettlers = ft_numlettles((char *)str, chr);
+		matrix[array] = ft_substr(str, 0, num_lettlers);
+		str += num_lettlers + 1;
 		array++;
 	}
 	matrix[array] = 0;

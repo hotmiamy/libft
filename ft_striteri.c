@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 21:02:09 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/09 21:25:10 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/14 04:45:41 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_striteri(char *str, void (*ft)(unsigned int, char*))
 {
-	size_t index;
+	size_t	index;
+
 	if (!str || !*str)
 		return ;
 	index = 0;

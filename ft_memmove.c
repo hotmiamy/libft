@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:26:41 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/08/30 21:14:06 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/14 04:02:48 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	unsigned char	*castDst;
-	unsigned char	*castSrc;
+	unsigned char	*cast_dst;
+	unsigned char	*cast_src;
 
-	castDst = (unsigned char *)dest;
-	castSrc = (unsigned char *)src;
+	cast_dst = (unsigned char *)dest;
+	cast_src = (unsigned char *)src;
 	if (dest > src)
 	{
 		while (len--)
 		{
-			castDst[len] = castSrc[len];
+			cast_dst[len] = cast_src[len];
 		}
-		return (castDst);
+		return (cast_dst);
 	}
 	else
 	{

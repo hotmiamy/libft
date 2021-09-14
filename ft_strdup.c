@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 16:51:41 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/09 01:55:39 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/14 04:47:08 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 char	*ft_strdup(const char *str)
 {
 	int		strlen;
-	char	*allocStr;
+	char	*alloc_str;
 
 	strlen = ft_strlen(str) + 1;
-	allocStr = (char *)malloc(strlen * sizeof(char));
-	if(!allocStr)
+	alloc_str = (char *)malloc(strlen * sizeof(char));
+	if (!alloc_str)
 		return (NULL);
-	ft_strlcpy(allocStr, str, strlen);
-	return (allocStr);
+	ft_strlcpy(alloc_str, str, strlen);
+	return (alloc_str);
 }

@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 22:43:16 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/09 01:12:59 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/14 03:42:55 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 
 	dest = dst;
 	if (!dest && !src)
-		return (dest);
+		return (NULL);
 	while (len--)
 	{
 		*(char *)dst++ = *(char *)src++;

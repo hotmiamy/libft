@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 14:06:17 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/01 19:46:09 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/14 03:38:35 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memchr(const void *byte, int chr, size_t len)
 {
-	unsigned char	*castByte;
+	unsigned char	*cast_byte;
 
-	castByte = (unsigned char *)byte;
+	cast_byte = (unsigned char *)byte;
 	while (len--)
 	{
-		if (*castByte == (unsigned char)chr)
-			return (castByte);
-		castByte++;
+		if (*cast_byte == (unsigned char)chr)
+			return (cast_byte);
+		cast_byte++;
 	}
 	return (0);
 }

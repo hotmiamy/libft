@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:35:38 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/13 20:33:44 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/09/14 04:46:59 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_cont_digits(int nbr)
 {
-	int nbr_count;
+	int	nbr_count;
 
 	nbr_count = 0;
 	if (nbr < 0)
@@ -39,10 +39,10 @@ char	*ft_itoa(int nbr)
 	if (!nbr_str)
 		return (0);
 	if (nbr < 0)
-		nbr_str[0]  = '-';
+		nbr_str[0] = '-';
 	while (nbr)
 	{
-		if(nbr > 0)
+		if (nbr > 0)
 			nbr_str[--nbr_digits] = '0' + (nbr % 10);
 		else
 			nbr_str[--nbr_digits] = '0' - (nbr % 10);

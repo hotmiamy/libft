@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:12:28 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/14 01:40:43 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/11/14 14:57:46 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void	ft_putchar_fd(char chr, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int nbr, int fd);
 void	ft_putstr_fd(char *str, int fd);
+char	*ft_base_converter(unsigned long nbr, char *base);
+char	*ft_uitoa(unsigned int nbr);
 
 #endif

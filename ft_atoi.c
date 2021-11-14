@@ -6,12 +6,11 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 17:25:26 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/14 01:47:41 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/10/01 14:40:09 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	*ft_isspace(char *number)
 {

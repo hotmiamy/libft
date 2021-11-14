@@ -6,7 +6,7 @@
 /*   By: llopes-n <llopes-n@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:07:53 by llopes-n          #+#    #+#             */
-/*   Updated: 2021/09/14 04:16:51 by llopes-n         ###   ########.fr       */
+/*   Updated: 2021/11/14 14:35:41 by llopes-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_numlettles(char *str, char delimiter)
 	return (num_lettles);
 }
 
-static int	ft_numWorlds(char *str, char delimiter)
+static int	ft_num_worlds(char *str, char delimiter)
 {
 	int	index;
 	int	number_worlds;
@@ -53,7 +53,7 @@ char	**ft_split(char const *str, char chr)
 	if (!str)
 		return (0);
 	array = 0;
-	num_worlds = ft_numWorlds((char *)str, chr);
+	num_worlds = ft_num_worlds((char *)str, chr);
 	matrix = (char **)malloc((num_worlds + 1) * sizeof(char *));
 	if (!matrix)
 		return (NULL);
